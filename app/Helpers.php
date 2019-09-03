@@ -1,8 +1,8 @@
-<?php 
+<?php
 
 namespace SimpleLocator;
 
-class Helpers 
+class Helpers
 {
 
 	/**
@@ -10,7 +10,7 @@ class Helpers
 	*/
 	public static function plugin_url()
 	{
-		return plugins_url() . '/simple-locator';
+		return plugins_url() . '/posts-locator';
 	}
 
 	/**
@@ -45,7 +45,7 @@ class Helpers
 		foreach($matches[0] as $key=>$m){
 			$string = str_replace($m, $matches[2][$key], $string);
 		}
-		
+
 		return $string;
 	}
 
@@ -65,7 +65,7 @@ class Helpers
 		$excerpt_waste = array_pop($the_excerpt);
 		$the_excerpt = implode($the_excerpt) . '...';
 		$the_excerpt = substr($the_excerpt, 0, strripos($the_excerpt, " "));
- 
+
 		return apply_filters('the_content', $the_excerpt);
 	}
 
