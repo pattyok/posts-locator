@@ -119,7 +119,6 @@ class FormShortcode
 			'resultswrapper' => '',
 			'markerclustering' => $this->settings_repo->getMapClustering(),
 		), $options);
-		error_log(print_r($this->options, true));
 	}
 
 
