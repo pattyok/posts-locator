@@ -3,7 +3,7 @@
 Plugin Name: Simple Locator
 Github Plugin URI: https://github.com/pattyok/posts-locator
 Description: Location search in WordPress, based on Simple Post Locator.
-Version: 2.1
+Version: 2.1.1
 Author: Patty O'Hara
 Author URI: http://github.com/pattyok
 Text Domain: wpsimplelocator
