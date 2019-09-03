@@ -134,6 +134,7 @@ class LocationResultPresenter
 	{
 		$mapmarker = get_post_meta($this->result->ID, $this->settings_repo->getMapPinField(), true);
 		//TODO Set as default pin from settings
+		//TODO Deal with blank map pin field
 		if (empty($mapmarker)) {
 			$mapmarker = get_stylesheet_directory_uri() . '/dist/img/map-icons/farms.svg';
 		}

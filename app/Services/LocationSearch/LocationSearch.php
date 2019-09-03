@@ -198,6 +198,11 @@ class LocationSearch
 	*/
 	private function setQuery()
 	{
+		if( class_exists('GJSGeoQuery') ) {
+			error_log("GSGeoQuery");
+		} else {
+			error_log("NO GSGeoQuery");
+		}
 		$args = array(
 			'post_type' => $this->data['post_type'],
 			'post_status' => 'publish',
@@ -215,6 +220,7 @@ class LocationSearch
 		if ( $this->taxonomy ) {
 			$args['tax_query'] = $this->taxonomyQuery();
 		}
+		error_log(print_r($args, true));
 		$this->args = $args;
 	}
 

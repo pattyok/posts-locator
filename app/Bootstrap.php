@@ -1,11 +1,11 @@
-<?php 
+<?php
 
 namespace SimpleLocator;
 
 /**
 * Plugin Bootstrap
 */
-class Bootstrap 
+class Bootstrap
 {
 
 	function __construct()
@@ -58,12 +58,12 @@ class Bootstrap
 	* Add a link to the settings on the plugin page
 	*/
 	public function settingsLink($links)
-	{ 
-  		$settings_link = '<a href="options-general.php?page=wp_simple_locator">' . __('Settings','wpsimplelocator') . '</a>'; 
-  		$help_link = '<a href="http://locatewp.com">' . __('FAQ','wpsimplelocator') . '</a>'; 
-  		array_unshift($links, $help_link); 
+	{
+  		$settings_link = '<a href="options-general.php?page=wp_simple_locator">' . __('Settings','wpsimplelocator') . '</a>';
+  		$help_link = '<a href="http://locatewp.com">' . __('FAQ','wpsimplelocator') . '</a>';
+  		array_unshift($links, $help_link);
   		array_unshift($links, $settings_link);
-  		return $links; 
+  		return $links;
 	}
 
 	/**
@@ -80,8 +80,8 @@ class Bootstrap
 	public function addLocalization()
 	{
 		load_plugin_textdomain(
-			'wpsimplelocator', 
-			false, 
+			'wpsimplelocator',
+			false,
 			dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages' );
 	}
 

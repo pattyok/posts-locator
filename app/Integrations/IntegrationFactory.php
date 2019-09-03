@@ -3,6 +3,7 @@
 namespace SimpleLocator\Integrations;
 
 use SimpleLocator\Integrations\ACF\AdvancedCustomFields;
+use SimpleLocator\Integrations\GeoLoc\GeoQuery;
 
 class IntegrationFactory
 {
@@ -17,5 +18,6 @@ class IntegrationFactory
 	private function build()
 	{
 		new AdvancedCustomFields;
+		new GeoQuery;
 	}
 }
