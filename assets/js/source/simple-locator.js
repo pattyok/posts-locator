@@ -251,7 +251,7 @@ jQuery(function($) {
           googlemaps_response = results;
           var latitude = results[0].geometry.location.lat();
           var longitude = results[0].geometry.location.lng();
-          formatted_address = results[0].formatted_address;
+          var address = results[0].formatted_address;
 
           if (wpsl_locator.jsdebug === "1") {
             console.log("Google Geocode Response");
@@ -260,6 +260,7 @@ jQuery(function($) {
 
           $(formelements.latitude).val(latitude);
           $(formelements.longitude).val(longitude);
+          $(formelements.address).val(address);
 
           if ($(formelements.form).find("#wpsl_action").length === 0) {
             if (callback) {
@@ -328,7 +329,7 @@ jQuery(function($) {
     formdata = {
       action: "locate",
       address: address,
-      formatted_address: formatted_address,
+      formatted_address: $(formelements.address).val(),
       locatorNonce: $(".locator-nonce").val(),
       distance: distance,
       latitude: $(formelements.latitude).val(),
