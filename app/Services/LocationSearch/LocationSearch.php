@@ -198,11 +198,6 @@ class LocationSearch
 	*/
 	private function setQuery()
 	{
-		if( class_exists('GJSGeoQuery') ) {
-			error_log("GSGeoQuery");
-		} else {
-			error_log("NO GSGeoQuery");
-		}
 		$args = array(
 			'post_type' => $this->data['post_type'],
 			'post_status' => 'publish',
@@ -230,9 +225,9 @@ class LocationSearch
 	private function runQuery()
 	{
 		$query_args = apply_filters('simple_locator_full_query', $this->args);
-
+		error_log(print_r($query_args, true));
 		// Run the Query
-		$query = new \WP_Query($this->args);
+		$query = new \WP_Query($query_args);
 
 		$results = $query->posts;
 		$this->result_count = count($results);

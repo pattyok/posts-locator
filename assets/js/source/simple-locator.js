@@ -160,9 +160,7 @@ jQuery(function ($) {
 	}
 
 	function getFormElements(form) {
-		console.log(form);
 		var guid = $(form).data("guid");
-		console.log(guid);
 		return m.formelements[guid];
 	}
 
@@ -201,7 +199,6 @@ jQuery(function ($) {
    * @param {function} error
    */
 	function submitForm(form, filters, submit_success, submit_error) {
-		console.log(form);
 		var formelements = getFormElements(form);
 		$(formelements.errordiv).hide();
 
@@ -307,8 +304,6 @@ jQuery(function ($) {
 			});
 		}
 
-		console.log(taxonomies);
-
 		// Create an array from the selected taxonomies
 		var taxonomy_array = {};
 		$.each(taxonomies, function (i, v) {
@@ -394,14 +389,12 @@ jQuery(function ($) {
 		});
 	}
 	function clearFilters(form) {
+
 		var formid = $(form).data("guid");
 		var data = m.results[formid].full;
 		updateLocationResults(data, form);
 	}
 	function filterResults(filters, form, after_filter_results) {
-
-		console.log('filterResults');
-		console.log(filters);
 		var formid = $(form).data("guid");
 		var results = m.results[formid];
 		var postsById = results.postsById;
