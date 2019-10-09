@@ -8,7 +8,9 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "domurl": "^2.2.0"
+  },
   "devDependencies": {
     "@google/markerclusterer": "^1.0.3"
   }

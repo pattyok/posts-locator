@@ -73,8 +73,9 @@ $output .= '>
 		<input type="hidden" name="latitude" class="latitude" />
 		<input type="hidden" name="longitude" class="longitude" />
 		<input type="hidden" name="unit" value="' . $this->unit_raw . '" class="unit" />
-		<input type="hidden" name="limit" class="limit" value="' . $this->options['perpage'] . '" />
-		<button type="submit" class="wpslsubmit">' . html_entity_decode($this->options['buttontext']) . '</button>
+		<input type="hidden" name="limit" class="limit" value="' . $this->options['perpage'] . '" />';
+	$output .= wp_nonce_field( 'locatornonce', 'locator-nonce', true, false );
+	$output .= '<button type="submit" class="wpslsubmit">' . html_entity_decode($this->options['buttontext']) . '</button>
 	</div>
 	<div class="geo_button_cont"></div>
 	</form>';

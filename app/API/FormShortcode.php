@@ -98,6 +98,7 @@ class FormShortcode
 		$this->options = shortcode_atts(array(
 			'distances' => '5,10,20,50,100',
 			'mapheight' => '250',
+			'wrapper' => '.wpsl-wrapper',
 			'mapcontainer' => '.wpsl-map',
 			'resultscontainer' => '.wpsl-results',
 			'resultsheader' => '.wpsl-resultsheader',
@@ -143,6 +144,7 @@ class FormShortcode
 	{
 		$localized_data = array(
 			'mapcont' => $this->options['mapcontainer'],
+			'wrapper' => $this->options['wrapper'],
 			'resultscontainer' => $this->options['resultscontainer'],
 			'resultsheader' => $this->options['resultsheader'],
 			'resultswrapper' => $this->options['resultswrapper'],

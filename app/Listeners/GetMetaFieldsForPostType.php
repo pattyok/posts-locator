@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace SimpleLocator\Listeners;
 
@@ -7,7 +7,7 @@ use \SimpleLocator\Repositories\FieldRepository;
 /**
 * Returns JSON response with HTML option list with all meta fields for a given post type
 */
-class GetMetaFieldsForPostType 
+class GetMetaFieldsForPostType
 {
 
 	/**
@@ -55,6 +55,7 @@ class GetMetaFieldsForPostType
 	*/
 	private function validateNonce()
 	{
+		error_log(print_r($this->data['nonce'], true));
 		if ( ! wp_verify_nonce( $this->data['nonce'], 'wpsl_locator-locator-nonce' ) ){
 			$this->sendResponse(array('status'=>'error', 'message'=>'Incorrect Form Field'));
 		}

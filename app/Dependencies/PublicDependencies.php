@@ -36,7 +36,7 @@ class PublicDependencies extends DependencyBase
 	{
 		$this->addGoogleMaps();
 
-		$dependencies = array('jquery', 'simple-locator-lodash', 'simple-locator-oms');
+		$dependencies = array('jquery', 'simple-locator-lodash', 'simple-locator-oms', 'simple-locator-domurl');
 		if ( $this->settings_repo->customMapOptions() || $this->settings_repo->outputGMaps() ) $dependencies[] = 'google-maps';
 
 		wp_register_script(
@@ -58,6 +58,14 @@ class PublicDependencies extends DependencyBase
 		wp_register_script(
 			'simple-locator-map-clustering',
 			$this->plugin_dir . '/assets/js/markerclusterer.js',
+			array('jquery'),
+			$this->version,
+			true
+		);
+
+		wp_register_script(
+			'simple-locator-domurl',
+			$this->plugin_dir . '/assets/js/url.min.js',
 			array('jquery'),
 			$this->version,
 			true

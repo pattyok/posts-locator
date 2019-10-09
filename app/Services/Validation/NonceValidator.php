@@ -1,8 +1,8 @@
-<?php 
+<?php
 
 namespace SimpleLocator\Services\Validation;
 
-class NonceValidator 
+class NonceValidator
 {
 
 	/**
